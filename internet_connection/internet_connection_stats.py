@@ -49,7 +49,7 @@ def connection_speed(*args, **kwargs):
         "ping": ping
     }
 
-    print(json.dumps(results, indent=2))
+    return results
 
 if __name__ == "__main__":
     connection_speed()

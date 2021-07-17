@@ -15,7 +15,7 @@ setup(
         long_description=LONG_DESCRIPTION,
         packages=find_packages(),
         license = "MIT",
-        install_requires=[], # add any additional packages that 
+        install_requires=['speedtest-cli', 'numpy', 'pandas'], # add any additional packages that 
         # needs to be installed along with your package. Eg: 'caer'
         
         keywords=['python', 'network', 'ping', 'socket'],

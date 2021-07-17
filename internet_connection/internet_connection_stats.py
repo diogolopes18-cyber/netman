@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-import socket
-import json
 import speedtest
 import logging
 import check_connection as conn_check
@@ -19,28 +17,16 @@ class internetConnection():
         else:
             exit(-1)
 
-def connection_speed(*args, **kwargs):
+def connection_speed():
     
     #Create object
     internet_conn_exists = internetConnection()
     internet_conn_exists.isvalid()
 
-    #Optional parameters
-    check_for = kwargs.get('check_for', None)
-
     #Results
     download_speed = stats.download()
     upload_speed = stats.upload()
     ping = stats.results.ping
-
-    if(check_for == 'ping'):
-        return f'Ping: {ping}'
-
-    elif(check_for == 'download'):
-        return f'Download: {download_speed}'
-    
-    elif(check_for == 'upload'):
-        return f'Upload: {upload_speed}'
         
     #Combined results
     results = {
@@ -50,6 +36,3 @@ def connection_speed(*args, **kwargs):
     }
 
     return results
-
-if __name__ == "__main__":
-    connection_speed()
